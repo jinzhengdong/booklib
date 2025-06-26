@@ -149,6 +149,64 @@
         </div>
     </script>
     
+    <script type="text/html" id="borrow-list-tpl">
+        <div class="layui-card">
+            <div class="layui-card-header">借阅记录</div>
+            <div class="layui-card-body">
+                <div class="layui-form layui-form-pane">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <label class="layui-form-label">状态</label>
+                            <div class="layui-input-inline">
+                                <select id="statusFilter">
+                                    <option value="">全部</option>
+                                    <option value="borrowing">借阅中</option>
+                                    <option value="returned">已归还</option>
+                                </select>
+                            </div>
+                            <button class="layui-btn" id="filterBtn">筛选</button>
+                        </div>
+                    </div>
+                </div>
+                <table id="borrowTable" lay-filter="borrowTable"></table>
+            </div>
+        </div>
+    </script>
+    
+    <script type="text/html" id="borrow-add-tpl">
+        <div class="layui-card">
+            <div class="layui-card-header">图书借阅</div>
+            <div class="layui-card-body">
+                <form class="layui-form" id="borrowForm">
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">图书ID</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="book_id" required lay-verify="required" placeholder="请输入图书ID" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">借阅人姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="borrower_name" required lay-verify="required" placeholder="请输入借阅人姓名" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <label class="layui-form-label">联系电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="borrower_phone" required lay-verify="required|phone" placeholder="请输入联系电话" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-form-item">
+                        <div class="layui-input-block">
+                            <button class="layui-btn" lay-submit lay-filter="borrowSubmit">立即借阅</button>
+                            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </script>
+    
     <!-- 引入依赖库 -->
     <script src="lib/jquery/jquery-3.6.0.min.js"></script>
     <script src="lib/layui/layui.js"></script>

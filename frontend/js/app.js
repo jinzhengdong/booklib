@@ -236,6 +236,42 @@ $(document).ready(function() {
                         };
                     }
                 });
+                
+                // 状态筛选功能
+                $('#filterBtn').off('click').on('click', function() {
+                    const status = $('#statusFilter').val();
+                    table.reload('borrowTable', {
+                        where: { status: status },
+                        page: { curr: 1 }
+                    });
+                });
+                
+                // 重新渲染表单
+                form.render();
+            },
+            
+            // 初始化借阅添加
+            initBorrowAdd: function() {
+                // 重新渲染表单
+                form.render();
+                
+                // 监听提交
+                form.on('submit(borrowSubmit)', function(data) {
+                    request({
+                        url: API_ENDPOINTS.borrow.borrow,
+                        type: 'POST',
+                        data: data.field,
+                        success: function(res) {
+                            if (res.code === 0) {
+                                layer.msg('借阅成功', {icon: 1});
+                                // 重置表单
+                                $('#borrowForm')[0].reset();
+                                form.render();
+                            }
+                        }
+                    });
+                    return false;
+                });
             }
         };
         
