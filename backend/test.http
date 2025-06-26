@@ -1,0 +1,25 @@
+### 获取所有图书
+GET http://localhost:3000/api/books
+
+### 添加新图书
+POST http://localhost:3000/api/books
+Content-Type: application/json
+
+{
+    "isbn": "9787121234567",
+    "title": "Vue.js实战",
+    "author": "张三",
+    "publisher": "电子工业出版社",
+    "publish_date": "2023-01-01",
+    "category": "编程"
+}
+
+### 借阅图书
+POST http://localhost:3000/api/borrow/borrow
+Content-Type: application/json
+
+{
+    "book_id": 1,
+    "borrower_name": "李四",
+    "borrower_phone": "13800138000"
+}

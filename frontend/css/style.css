@@ -1,0 +1,66 @@
+/* 全局样式 */
+body {
+    background-color: #f2f2f2;
+}
+
+/* 欢迎页样式 */
+.welcome-container {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.welcome-container h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.welcome-container p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* 卡片样式 */
+.layui-card {
+    margin: 15px;
+}
+
+/* 表单样式 */
+.layui-form {
+    padding: 20px 20px 0 0;
+}
+
+/* 表格操作栏样式 */
+.table-toolbar {
+    padding: 10px 0;
+}
+
+/* 响应式调整 */
+@media screen and (max-width: 750px) {
+    .layui-form-item .layui-inline {
+        margin-bottom: 10px;
+    }
+    
+    .layui-form-item .layui-input-inline {
+        width: 100%;
+    }
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
